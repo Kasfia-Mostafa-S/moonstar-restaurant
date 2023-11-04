@@ -24,7 +24,7 @@ const navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white underline" : ""
+            isPending ? "pending" : isActive ? "text-white font-DM underline" : ""
           }
         >
           Home
@@ -34,7 +34,7 @@ const navbar = () => {
         <NavLink
           to="/addProduct"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white underline" : ""
+            isPending ? "pending" : isActive ? "text-white font-DM underline" : ""
           }
         >
           Food Items
@@ -44,7 +44,7 @@ const navbar = () => {
         <NavLink
           to="/blog"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white underline" : ""
+            isPending ? "pending" : isActive ? "text-white font-DM underline" : ""
           }
         >
           Blog
@@ -55,7 +55,7 @@ const navbar = () => {
 
   return (
     <div>
-      <nav className="bg-black font-San border-gray-200 dark:bg-gray-900 ">
+      <nav className="bg-black font-DM border-gray-200 dark:bg-gray-900 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
             <BsMoonStars className="text-xl mr-3 text-white"></BsMoonStars>
@@ -75,7 +75,7 @@ const navbar = () => {
             {user ? (
               <button
                 onClick={handleSignOut}
-                className="text-black bg-slate-200 hover:bg-slate-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-black  bg-slate-200 hover:bg-slate-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-2 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Log Out
               </button>
@@ -116,7 +116,7 @@ const navbar = () => {
               </svg>
             </button>
             <img
-              className="w-8 h-8 rounded-full"
+              className="w-8 h-8 rounded-full ml-4"
               src="https://i.ibb.co/bWXBGX4/jakob-owens-ZOi80-IKQyus-unsplash.jpg"
               // src={user.photoURL}
               alt="user photo"
