@@ -3,7 +3,7 @@ import { BsMoonStars } from "react-icons/Bs";
 const navbar = () => {
   return (
     <div>
-      <nav className="bg-[#0F0d0d] font-San border-gray-200 dark:bg-gray-900 ">
+      <nav className="bg-black font-San border-gray-200 dark:bg-gray-900 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
             <BsMoonStars className="text-xl mr-3 text-white"></BsMoonStars>
