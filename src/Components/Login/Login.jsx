@@ -1,4 +1,43 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const login = () => {
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+
+    if ((email, password)) {
+      signIn(email, password)
+        .then((result) => {
+          navigate("/");
+        })
+        .catch((error) => {
+          setError(error.massage);
+        });
+    }
+  };
+
+  const handleGoogleRegister = () => {
+    googleSignIn().then((result) => {
+      console.log(result.user);
+    });
+  };
+
+  const notification = () => toast("Successfully Login");
+
   return (
     <div className="h-[80vh] font-DM">
       <div className="w-full relative">
@@ -15,7 +54,11 @@ const login = () => {
               <h1 className="text-3xl text-center font-bold leading-tight tracking-tight text-white">
                 Login to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                onSubmit={handleLogin}
+                className="space-y-4 md:space-y-6"
+                action="#"
+              >
                 <div>
                   <label
                     for="email"
@@ -51,6 +94,7 @@ const login = () => {
 
                 <div className="flex justify-center">
                   <button
+                    onClick={notification}
                     type="button"
                     className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                   >
@@ -58,15 +102,34 @@ const login = () => {
                   </button>
                 </div>
                 <p className="text-sm font-light text-white">
-                  Do not have an account yet?{" "}
-                  <a
-                    href="#"
-                    className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                  >
-                    Sign up
-                  </a>
+                  Do not have an account yet?
+                  <Link className="ml-2" to="/register">
+                    Register
+                  </Link>
                 </p>
               </form>
+              <div className="flex justify-center">
+                <button
+                  onClick={handleGoogleRegister}
+                  type="button"
+                  className="flex hover:text-white hover:bg-black bg-white text-black focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 18 19"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Sign in with Google
+                </button>
+              </div>
             </div>
           </div>
         </div>

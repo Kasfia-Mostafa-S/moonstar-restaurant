@@ -9,7 +9,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import app from "../Hooks/firebase.config";
+import app from "../Firebase/Firebase.config";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -33,15 +33,15 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleSignIn = (value) => {
-    return signInWithPopup(auth,googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
 
-  const handleUpdateProfile = (name,photo) => {
-    return updateProfile(auth.currentUser,{
-      displayName:name,
-      photoURL:photo
-    })
-  }
+  const handleUpdateProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     googleSignIn,
-    handleUpdateProfile
+    handleUpdateProfile,
   };
 
   return (
