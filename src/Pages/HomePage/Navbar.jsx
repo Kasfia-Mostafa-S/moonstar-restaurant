@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { BsMoonStars } from "react-icons/Bs";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Dropdown } from "flowbite-react";
 
 const navbar = () => {
   const [error, setError] = useState("");
@@ -24,7 +25,11 @@ const navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white font-DM underline" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-white font-DM underline"
+              : ""
           }
         >
           Home
@@ -32,9 +37,13 @@ const navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/addProduct"
+          to="/foodItems"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white font-DM underline" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-white font-DM underline"
+              : ""
           }
         >
           Food Items
@@ -44,7 +53,11 @@ const navbar = () => {
         <NavLink
           to="/blog"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white font-DM underline" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-white font-DM underline"
+              : ""
           }
         >
           Blog
@@ -121,6 +134,38 @@ const navbar = () => {
               // src={user.photoURL}
               alt="user photo"
             ></img>
+            <Dropdown label="Dropdown button">
+              {/* <Dropdown.Header>
+                <span className="block truncate text-sm font-medium">
+                  {user.email}
+                </span>
+              </Dropdown.Header> */}
+<Link to='/foodItems'><Dropdown.Item>Dashboard</Dropdown.Item>
+</Link>
+              <Dropdown.Item>Settings</Dropdown.Item>
+              <Dropdown.Item>Earnings</Dropdown.Item>
+              <Dropdown.Divider />
+              <Link to="/login">
+                <Dropdown.Item>
+                {user ? (
+              <p
+                onClick={handleSignOut}
+                className="text-black"
+              >
+                Log Out
+              </p>
+            ) : (
+              <Link to="/login">
+                <p
+                  type="button"
+                  className="text-black">
+                  Login
+                </p>
+              </Link>
+            )}
+                </Dropdown.Item>
+              </Link>
+            </Dropdown>
           </div>
         </div>
       </nav>

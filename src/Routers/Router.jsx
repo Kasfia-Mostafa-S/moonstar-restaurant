@@ -4,6 +4,10 @@ import Home from "../Pages/Home/Home";
 import Login from "../Components/Login/Login"
 import Register from "../Components/Registration/Registration";
 import Blog from "../Pages/Blog/Blog";
+import FoodItems from "../Pages/FoodItems/FoodItems";
+import EachItem from "../Pages/EachItem/EachItem";
+import Order from "../Pages/Order/Order";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +19,22 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/blog',
+        path: 'foodItems',
+        element: <FoodItems></FoodItems>,
+        loader:  () => fetch(`http://localhost:5000/foods`),
+      },
+      {
+        path: 'foodItems/:id',
+        element: <EachItem></EachItem>,
+        loader:  ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+      },
+      {
+        path: 'order/:id',
+        element:<PrivateRoute><Order></Order></PrivateRoute>,
+        loader:  ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+      },
+      {
+        path: 'blog',
         element: <Blog></Blog>
       },
       {

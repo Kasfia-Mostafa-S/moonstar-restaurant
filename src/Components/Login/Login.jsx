@@ -17,7 +17,6 @@ const login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
 
     if ((email, password)) {
       signIn(email, password)
@@ -29,12 +28,15 @@ const login = () => {
         });
     }
   };
+  
 
-  const handleGoogleRegister = () => {
+
+  const handleGoogleLogin = () => {
     googleSignIn().then((result) => {
       console.log(result.user);
     });
   };
+
 
   const notification = () => toast("Successfully Login");
 
@@ -95,7 +97,7 @@ const login = () => {
                 <div className="flex justify-center">
                   <button
                     onClick={notification}
-                    type="button"
+                    type="submit"
                     className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                   >
                     Login
@@ -110,7 +112,7 @@ const login = () => {
               </form>
               <div className="flex justify-center">
                 <button
-                  onClick={handleGoogleRegister}
+                  onClick={handleGoogleLogin}
                   type="button"
                   className="flex hover:text-white hover:bg-black bg-white text-black focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
                 >

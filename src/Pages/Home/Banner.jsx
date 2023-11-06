@@ -20,13 +20,24 @@ const Banner = () => {
             Restaurant
           </h1>
         </div>
+        <div
+          data-aos="fade-zoom-in"
+          className="text-white max-w-7xl mx-auto pt-8"
+        >
+          <p className="text-center">
+            Welcome to our charming restaurant, where culinary delight meets a
+            warm and inviting ambiance. <br />
+            Our menu boasts a tantalizing array of dishes crafted with the
+            finest, locally-sourced ingredients, prepared by our talented chefs.
+          </p>
+        </div>
         <div data-aos="zoom-in" className="flex justify-center mt-16">
           <video
             className="w-3/4"
             autoPlay
             muted
             loop
-            src="/src/assets/stock-footage-camera-zoom-to-arcade-machine-screen-a-retro-arcade-room-d-animation-render-isolated-closeup.webm"
+            src="/src/assets/vecteezy_knead-the-dough-ingredients-for-the-dough-the-best_14705753_962.mov"
           ></video>
         </div>
       </div>
