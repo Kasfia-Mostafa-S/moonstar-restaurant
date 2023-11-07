@@ -5,10 +5,9 @@ import swal from "sweetalert";
 
 const Order = () => {
   const orderFood = useLoaderData();
-  const { Food_Name, Price, Quantity, email } = orderFood || [];
+  const { Food_Name, Price, Food_Image } = orderFood || [];
 
   const { user } = useContext(AuthContext);
-  console.log(user.displayName);
 
   const handleOrder = (event) => {
     event.preventDefault();
@@ -19,8 +18,10 @@ const Order = () => {
     const date = form.date.value;
     const name = form.name.value;
     const email = form.email.value;
+    const image = form.image.value;
 
-    const orderInfo = { date,food_name, price, quantity, name, email };
+    const orderInfo = { date, food_name, price, quantity, name, email, image };
+    console.log(orderInfo);
 
     if (parseInt(quantity) > parseInt(20)) {
       swal("Sorry!", "Doesn't have enough quantity ");
@@ -28,7 +29,7 @@ const Order = () => {
       swal("Thank You!", "Hope you love the taste", "success");
     }
 
-    fetch("http://localhost:5000/users", {
+    fetch("http://localhost:5000/newFood", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,7 +39,7 @@ const Order = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        Swal.fire({
+        swal.fire({
           title: "Success!",
           text: "Product added successfully",
           icon: "success",
@@ -49,7 +50,10 @@ const Order = () => {
 
   return (
     <div className="bg-black">
-      <form onSubmit={handleOrder} className="max-w-6xl mx-auto p-40 h-[100vh]">
+      <form onSubmit={handleOrder} className="max-w-7xl mx-auto p-40 h-[100vh]">
+      <div className="flex justify-end">
+              <img className="w-40 rounded-3xl" src={Food_Image} alt="" />
+            </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
@@ -146,6 +150,23 @@ const Order = () => {
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Customer Email
+            </label>
+          </div>
+          <div hidden className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="image"
+              id="image"
+              className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              defaultValue={Food_Image}
+            />
+            <label
+              for="email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Picture
             </label>
           </div>
         </div>
