@@ -1,13 +1,14 @@
-import AddedFood from "./AddedFood";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import UserOrder from "./UserOrder";
 
-const AddedFoods = () => {
+const USerOrders = () => {
+
   const { user } = useContext(AuthContext);
 
   const [eachEmail, setEachEmail] = useState([]);
 
-  const url = `http://localhost:5000/newFood?email=${user?.email}`;
+  const url = `http://localhost:5000/orderFood?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -15,7 +16,7 @@ const AddedFoods = () => {
   }, []);
 
   return (
-    <div className="bg-black">
+     <div className="bg-black">
       <div className=" max-w-7xl mx-auto h-[100vh] font-San  p-40">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
@@ -32,13 +33,13 @@ const AddedFoods = () => {
                   Price
                 </th>
                 <th scope="col" className="px-6 py-3 text-sm text-white">
-                  Action
+                  
                 </th>
               </tr>
             </thead>
             <tbody>
               {eachEmail.map((addFood) => (
-                <AddedFood key={addFood._id} addFood={addFood}></AddedFood>
+                <UserOrder key={addFood._id} addFood={addFood}></UserOrder>
               ))}
             </tbody>
           </table>
@@ -48,4 +49,4 @@ const AddedFoods = () => {
   );
 };
 
-export default AddedFoods;
+export default USerOrders;

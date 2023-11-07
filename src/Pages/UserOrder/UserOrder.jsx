@@ -2,7 +2,7 @@ import { Button, Label, Modal } from "flowbite-react";
 import { useState } from "react";
 import swal from "sweetalert";
 
-const AddedFood = ({ addFood }) => {
+const UserOrder = ({ addFood }) => {
   const { food_name, price, quantity, image, name,_id } = addFood;
   const [openModal, setOpenModal] = useState(false);
   const [email, setEmail] = useState("");
@@ -63,7 +63,6 @@ const AddedFood = ({ addFood }) => {
       </td>
       <td className="px-6 py-4">
         <div className="">
-          <Button onClick={() => setOpenModal(true)}>Update</Button>
           <Modal show={openModal} size="md" onClose={onCloseModal} popup>
             <Modal.Header />
             <Modal.Body className="bg-slate-400 rounded-b-lg">
@@ -120,4 +119,4 @@ const AddedFood = ({ addFood }) => {
   );
 };
 
-export default AddedFood;
+export default UserOrder;

@@ -85,24 +85,6 @@ const navbar = () => {
             </ul>
           </div>
           <div className="flex md:order-2">
-            {user ? (
-              <button
-                onClick={handleSignOut}
-                className="text-black  bg-slate-200 hover:bg-slate-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-2 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Log Out
-              </button>
-            ) : (
-              <Link to="/login">
-                <button
-                  type="button"
-                  className="text-black bg-slate-200 hover:bg-slate-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Login
-                </button>
-              </Link>
-            )}
-
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
@@ -127,41 +109,40 @@ const navbar = () => {
                   d="M1 1h15M1 7h15M1 13h15"
                 />
               </svg>
-            </button>
+           </button>
+           <div className="mr-3 mt-1">
             <img
-              className="w-8 h-8 rounded-full ml-4"
+              className="w-8 h-8 rounded-full"
               src="https://i.ibb.co/bWXBGX4/jakob-owens-ZOi80-IKQyus-unsplash.jpg"
               // src={user.photoURL}
               alt="user photo"
             ></img>
-            <Dropdown label="Dropdown button">
+           </div>
+            <Dropdown label="Profile">
               {/* <Dropdown.Header>
                 <span className="block truncate text-sm font-medium">
                   {user.email}
                 </span>
               </Dropdown.Header> */}
-<Link to='/addedFoods'><Dropdown.Item>My added food items</Dropdown.Item></Link>
+              <Link to="/addedFoods">
+                <Dropdown.Item>My added food items</Dropdown.Item>
+              </Link>
               <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
+              <Link to='/userOrder'><Dropdown.Item>Order Items</Dropdown.Item></Link>
               <Dropdown.Divider />
               <Link to="/login">
                 <Dropdown.Item>
-                {user ? (
-              <p
-                onClick={handleSignOut}
-                className="text-black"
-              >
-                Log Out
-              </p>
-            ) : (
-              <Link to="/login">
-                <p
-                  type="button"
-                  className="text-black">
-                  Login
-                </p>
-              </Link>
-            )}
+                  {user ? (
+                    <p onClick={handleSignOut} className="text-black">
+                      Log Out
+                    </p>
+                  ) : (
+                    <Link to="/login">
+                      <p type="button" className="text-black">
+                        Login
+                      </p>
+                    </Link>
+                  )}
                 </Dropdown.Item>
               </Link>
             </Dropdown>

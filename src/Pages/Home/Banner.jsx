@@ -24,7 +24,7 @@ const Banner = () => {
           data-aos="fade-zoom-in"
           className="text-white max-w-7xl mx-auto pt-8"
         >
-          <p className="text-center">
+          <p className="text-center font-San">
             Welcome to our charming restaurant, where culinary delight meets a
             warm and inviting ambiance. <br />
             Our menu boasts a tantalizing array of dishes crafted with the
