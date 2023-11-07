@@ -5,11 +5,6 @@ import { useState } from "react";
 const FoodItems = () => {
   const foods = useLoaderData();
 
-  let a = null
-  foods.forEach(function (foods) {
-    a = foods.Food_Name;
-  });
-
   const [filteredItems, setFilteredItems] = useState("");
 
   return (
@@ -66,11 +61,7 @@ const FoodItems = () => {
             .filter((food) => {
               if (filteredItems == "") {
                 return food;
-              } else if ( a ===
-                food.toLowerCase().includes(
-                  filteredItems.toLowerCase()
-                )
-              ) {
+              } else if (food.Food_Name.toLowerCase().includes(filteredItems)) {
                 return food;
               }
             })

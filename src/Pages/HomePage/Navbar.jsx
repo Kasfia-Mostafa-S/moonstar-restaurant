@@ -140,8 +140,7 @@ const navbar = () => {
                   {user.email}
                 </span>
               </Dropdown.Header> */}
-<Link to='/foodItems'><Dropdown.Item>Dashboard</Dropdown.Item>
-</Link>
+<Link to='/addedFoods'><Dropdown.Item>My added food items</Dropdown.Item></Link>
               <Dropdown.Item>Settings</Dropdown.Item>
               <Dropdown.Item>Earnings</Dropdown.Item>
               <Dropdown.Divider />
