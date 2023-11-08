@@ -4,7 +4,6 @@ import swal from "sweetalert";
 
 const AddFoodItems = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   const handleAddItem = (event) => {
     event.preventDefault();

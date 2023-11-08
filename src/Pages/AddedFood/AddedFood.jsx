@@ -23,7 +23,6 @@ const AddedFood = ({ addFood }) => {
       quantity,
     };
 
-    console.log(newProducts);
 
     fetch(`http://localhost:5000/newFood/${_id}`, {
       method: "PUT",

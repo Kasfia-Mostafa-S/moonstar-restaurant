@@ -13,6 +13,7 @@ import OrderItems from "../Pages/OrderItems/OrderItems";
 import USerOrders from "../Pages/UserOrder/USerOrders";
 import AddFoodItems from "../Pages/AddFoodItems/AddFoodItems";
 import Loader from "../Utility/Loader";
+import Error from "../Utility/Error";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register></Register>
+      },
+      {
+        path: '*',
+        element: <Error></Error>
       },
     ]
   },

@@ -2,8 +2,8 @@ import { Button, Label, Modal } from "flowbite-react";
 import { useState } from "react";
 import swal from "sweetalert";
 
-const UserOrder = ({ addFood }) => {
-  const { food_name, price, quantity, image, name,_id } = addFood;
+const UserOrder = ({ eachFood }) => {
+  const { food_name, price, quantity, image, name,_id } = eachFood;
   const [openModal, setOpenModal] = useState(false);
   const [email, setEmail] = useState("");
 
@@ -22,8 +22,6 @@ const UserOrder = ({ addFood }) => {
       name,
       quantity,
     };
-
-    console.log(newProducts);
 
     fetch(`http://localhost:5000/newFood/${_id}`, {
       method: "PUT",

@@ -1,6 +1,7 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const FoodItem = ({ food }) => {
@@ -13,7 +14,10 @@ const FoodItem = ({ food }) => {
 
   return (
     <div>
-    
+     <HelmetProvider>
+      <Helmet>
+        <title>Food Items | MSR</title>
+      </Helmet>
       <div className="bg-black" data-aos="fade-up">
         <div className="max-w-sm font-San bg-emerald-600 rounded-tr-full rounded-bl-full shadow dark:bg-gray-800 dark:border-gray-700">
           <img
@@ -41,6 +45,7 @@ const FoodItem = ({ food }) => {
           </Link>
         </div>
       </div>
+      </HelmetProvider>
     </div>
   );
 };

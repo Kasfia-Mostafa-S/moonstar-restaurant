@@ -5,19 +5,19 @@ import UserOrder from "./UserOrder";
 const USerOrders = () => {
 
   const { user } = useContext(AuthContext);
-
-  const [eachEmail, setEachEmail] = useState([]);
+  const [eachOrder, setEachOrder] = useState([]);
+  console.log(eachOrder)
 
   const url = `http://localhost:5000/orderFood?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setEachEmail(data));
-  }, []);
+      .then((data) => setEachOrder(data));
+  }, [url]);
 
   return (
      <div className="bg-black">
-      <div className=" max-w-7xl mx-auto  min-h-max font-San p-40">
+      <div className=" max-w-7xl mx-auto h-[150vh] font-San p-40">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
             <thead className="text-xs text-gray-700 uppercase bg-slate-900 dark:bg-gray-700 dark:text-gray-400">
@@ -38,9 +38,9 @@ const USerOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {eachEmail.map((addFood) => (
-                <UserOrder key={addFood._id} addFood={addFood}></UserOrder>
-              ))}
+            {eachOrder.map((eachFood) => 
+                <UserOrder key={eachFood._id} eachFood={eachFood}></UserOrder>
+              )}
             </tbody>
           </table>
         </div>
