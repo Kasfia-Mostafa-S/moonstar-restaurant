@@ -62,9 +62,9 @@ const AddedFood = ({ addFood }) => {
         </div>
       </td>
       <td className="px-6 py-4">
-        <div className="">
-          <Button onClick={() => setOpenModal(true)}>Update</Button>
-          <Modal show={openModal} size="md" onClose={onCloseModal} popup>
+        <div >
+          <Button className="p-1" onClick={() => setOpenModal(true)}>Update</Button>
+          <Modal className="max-w-xl flex mx-auto"  show={openModal} size="md" onClose={onCloseModal} popup>
             <Modal.Header />
             <Modal.Body className="bg-slate-400 rounded-b-lg">
               <div className="space-y-6 ">
@@ -108,7 +108,7 @@ const AddedFood = ({ addFood }) => {
                     
                   </div>
                   <div className="flex justify-center items-center w-full mt-4">
-                      <Button type="submit">Update</Button>
+                      <Button className="p-1" type="submit">Update</Button>
                     </div>
                 </form>
               </div>

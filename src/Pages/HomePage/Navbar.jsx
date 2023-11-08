@@ -127,7 +127,7 @@ const navbar = () => {
               <Link to="/addedFoods">
                 <Dropdown.Item>My added food items</Dropdown.Item>
               </Link>
-              <Dropdown.Item>Settings</Dropdown.Item>
+              <Link to='/addFoodItems'><Dropdown.Item>Add A food item</Dropdown.Item></Link>
               <Link to='/userOrder'><Dropdown.Item>Order Items</Dropdown.Item></Link>
               <Dropdown.Divider />
               <Link to="/login">
