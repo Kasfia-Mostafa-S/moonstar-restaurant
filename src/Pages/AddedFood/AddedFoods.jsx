@@ -9,7 +9,7 @@ const AddedFoods = () => {
   const [eachEmail, setEachEmail] = useState([]);
   console.log(eachEmail)
 
-  const url = `http://localhost:5000/newFood?email=${user?.email}`;
+  const url = `https://moonstar-restaurant-server.vercel.app?email=${user?.email}`;
   useEffect(() => {
     fetch(url, {credentials: 'include'})
       .then((res) => res.json())

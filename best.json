@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "Food_Name": "Paneer Tikka",
+    "Food_Image": "https://i.ibb.co/ckh5YnH/Paneer-Tikka-Recipe-Step-By-Step-Instructions.webp",
+    "Food_Category": "Appetizer",
+    "Price": 9.99,
+    "Quantity": 20,
+    "Made_By": "Chef Meera Singh",
+    "Food_Origin": "India",
+    "Description": "Cubes of marinated paneer grilled to perfection. Chef Meera Singh, a master of Indian cuisine, skillfully prepares this flavorful vegetarian appetizer."
+  },
+  {
+    "id": 2,
+    "Food_Name": "Butter Chicken",
+    "Food_Image": "https://i.ibb.co/nBgkVJT/OIP.jpg",
+    "Food_Category": "Curry",
+    "Price": 14.99,
+    "Quantity": 20,
+    "Made_By": "Chef Priya Patel",
+    "Food_Origin": "India",
+    "Description": "Tender chicken in a rich, buttery tomato gravy with a blend of Indian spices. Chef Priya Patel's expertise results in this delectable and savory delight."
+  },
+  {
+    "id": 3,
+    "Food_Name": "Palak Paneer",
+    "Food_Image": "https://i.ibb.co/Vj3xw0m/OIP-2.jpg",
+    "Food_Category": "Vegetarian",
+    "Price": 10.99,
+    "Quantity": 20,
+    "Made_By": "Chef Aarti Kapoor",
+    "Food_Origin": "India",
+    "Description": "Paneer cubes in a creamy spinach sauce with a medley of Indian spices. Chef Aarti Kapoor's culinary mastery is evident in this delightful vegetarian dish."
+  },
+  {
+    "id": 4,
+    "Food_Name": "Risotto ai Funghi",
+    "Food_Image": "https://i.ibb.co/MgFMcCS/OIP-5.jpg",
+    "Food_Category": "Risotto",
+    "Price": 13.99,
+    "Quantity": 20,
+    "Made_By": "Chef Carlo Bianchi",
+    "Food_Origin": "Italy",
+    "Description": "Creamy risotto with mushrooms, white wine, and Parmesan cheese. Chef Carlo Bianchi's Risotto ai Funghi is a savory and aromatic Italian delight.",
+    "Rating": 4.8
+  },
+  {
+    "id": 5,
+    "Food_Name": "Bulgogi",
+    "Food_Image": "https://i.ibb.co/R2KSLmh/OIP-1.jpg",
+    "Food_Category": "Grilled Meat",
+    "Price": 14.99,
+    "Quantity": 20,
+    "Made_By": "Chef Sun-woo Lee",
+    "Food_Origin": "Korea",
+    "Description": "Thinly sliced marinated beef grilled to perfection. Chef Sun-woo Lee's Bulgogi is a savory and tender Korean barbecue delight with a sweet and smoky flavor.",
+    "Rating": 4.9
+  },
+  {
+    "id": 6,
+    "Food_Name": "Shish Taouk",
+    "Food_Image": "https://i.ibb.co/rQdpNm6/R-5.jpg",
+    "Food_Category": "Grilled Chicken",
+    "Price": 11.99,
+    "Quantity": 20,
+    "Made_By": "Chef Yasmine Khalil",
+    "Food_Origin": "Arabia",
+    "Description": "Tender marinated chicken skewers grilled to perfection. Chef Yasmine Khalil's Shish Taouk is a flavorful and aromatic Arabian delight.",
+    "Rating": 4.8
+  }
+]

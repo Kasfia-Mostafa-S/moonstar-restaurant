@@ -113,17 +113,11 @@ const navbar = () => {
            <div className="mr-3 mt-1">
             <img
               className="w-8 h-8 rounded-full"
-              src="https://i.ibb.co/bWXBGX4/jakob-owens-ZOi80-IKQyus-unsplash.jpg"
-              // src={user.photoURL}
+              src={user?.photoURL}
               alt="user photo"
             ></img>
            </div>
             <Dropdown label="Profile">
-              {/* <Dropdown.Header>
-                <span className="block truncate text-sm font-medium">
-                  {user.email}
-                </span>
-              </Dropdown.Header> */}
               <Link to="/addedFoods">
                 <Dropdown.Item>My added food items</Dropdown.Item>
               </Link>

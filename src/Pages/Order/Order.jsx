@@ -31,7 +31,7 @@ const Order = () => {
       swal("Thank You!", "Hope you love the taste", "success");
     }
 
-    fetch("http://localhost:5000/newFood", {
+    fetch("https://moonstar-restaurant-server.vercel.app", {
       method: "POST",
       headers: {
         "content-type": "application/json",
