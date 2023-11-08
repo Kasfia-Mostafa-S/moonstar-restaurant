@@ -44,7 +44,7 @@ const AddFoodItems = () => {
 
   return (
     <div className="bg-black p-20">
-      <div className="max-w-3xl mx-auto p-10 font-San bg-purple-700 rounded-lg">
+      <div className="max-w-3xl mx-auto p-10 font-San bg-teal-700 rounded-lg">
         <form onSubmit={handleAddItem}>
           <div className="mb-6">
             <label className="block text-white mb-2 text-sm font-medium">
@@ -174,7 +174,7 @@ const AddFoodItems = () => {
           </div>
           <div>
               <label
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-white"
               >
                 Description
               </label>

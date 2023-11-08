@@ -12,6 +12,7 @@ import AddedFoods from "../Pages/AddedFood/AddedFoods";
 import OrderItems from "../Pages/OrderItems/OrderItems";
 import USerOrders from "../Pages/UserOrder/USerOrders";
 import AddFoodItems from "../Pages/AddFoodItems/AddFoodItems";
+import Loader from "../Utility/Loader";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: 'loader',
+        element: <Loader></Loader>
       },
       {
         path: 'login',
