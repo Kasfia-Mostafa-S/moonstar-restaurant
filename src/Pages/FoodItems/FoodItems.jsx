@@ -1,11 +1,42 @@
 import { useLoaderData } from "react-router-dom";
 import FoodItem from "./FoodItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ButtonStyle from "../../Styles/Button.css";
 
 const FoodItems = () => {
-  const foods = useLoaderData();
-
+  const { count } = useLoaderData();
+  const [foods, setFoods] = useState([]);
   const [filteredItems, setFilteredItems] = useState("");
+  const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const numberOfPages = Math.ceil(count / itemsPerPage);
+  const pages = [...Array(numberOfPages).keys()];
+
+  const handlePreviousPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const handleNextPage = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  useEffect(() => {
+    fetch("http://localhost:5000/foods")
+      .then((res) => res.json())
+      .then((data) => setFoods(data));
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      `http://localhost:5000/foods?page=${currentPage}&size=${itemsPerPage}`
+    )
+      .then((res) => res.json())
+      .then((data) => setFoods(data));
+  }, [currentPage, itemsPerPage]);
 
   return (
     <div className="bg-black">
@@ -68,6 +99,20 @@ const FoodItems = () => {
             .map((food) => (
               <FoodItem key={food._id} food={food}></FoodItem>
             ))}
+        </div>
+
+        <div className="pagination ">
+          <button onClick={handlePreviousPage}>Previous</button>
+          {pages.map((page) => (
+            <button
+              className={currentPage === page ? "selected" : undefined}
+              onClick={() => setCurrentPage(page)}
+              key={page}
+            >
+              {page}
+            </button>
+          ))}
+          <button onClick={handleNextPage}>Next</button>
         </div>
       </div>
     </div>
