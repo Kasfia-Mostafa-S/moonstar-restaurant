@@ -8,8 +8,8 @@ const Banner = () => {
   }, []);
 
   return (
-    <div>
-      <div className="min-h-[100vh] w-full bg-black pt-14">
+    <div className="pt-20 bg-black">
+      <div className="min-h-[100vh] w-full  pt-14">
         <div data-aos="fade-left">
           <h1 className="text-white text-9xl font-medium font-DM ml-96">
             Moon Star

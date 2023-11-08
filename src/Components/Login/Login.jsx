@@ -129,7 +129,7 @@ const login = () => {
                       clip-rule="evenodd"
                     />
                   </svg>
-                  Sign in with Google
+                  Login with Google
                 </button>
               </div>
             </div>

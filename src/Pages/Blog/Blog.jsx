@@ -7,7 +7,7 @@ const Blog = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <div className="bg-black">
+    <div className="bg-black pt-36 p-20">
       <div  data-aos="flip-left" className="bg-black h-full max-w-7xl mx-auto">
         <h2 className="text-7xl font-DM p-10 text-center font-bold text-white">
           Blog
