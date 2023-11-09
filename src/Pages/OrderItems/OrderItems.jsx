@@ -5,8 +5,9 @@ import swal from "sweetalert";
 
 const OrderItems = () => {
   const orderFood = useLoaderData();
-  const { Food_Name, Price, Food_Image, Food_Category } = orderFood || [];
-
+  const { Count, Food_Name, Price, Food_Image, Food_Category } =
+    orderFood || [];
+  console.log(Count);
 
   const { user } = useContext(AuthContext);
 
@@ -20,6 +21,7 @@ const OrderItems = () => {
     const name = form.name.value;
     const email = form.email.value;
     const image = form.image.value;
+    const count = form.count.value;
     const food_category = form.food_category.value;
 
     const orderInfo = {
@@ -31,29 +33,16 @@ const OrderItems = () => {
       name,
       email,
       image,
+      count
     };
+
+    // const newCount = { count };
 
     if (parseInt(quantity) > parseInt(20)) {
       swal("Sorry!", "Doesn't have enough quantity ");
     } else {
       swal("Thank You!", "Hope you love the taste", "success");
     }
-
-    // fetch(`http://localhost:5000/orderFood/${_id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(orderInfo),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if (data.modifiedCount > 0) {
-    //       swal("Updated!", "Order information has been updated!", "success");
-    //     }
-    //   })
-
 
     fetch("http://localhost:5000/orderFood", {
       method: "POST",
@@ -68,11 +57,21 @@ const OrderItems = () => {
         swal("Confirm!", "Food has been ordered!", "success");
       });
 
-    
-
+    fetch(`http://localhost:5000/foods/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ Count: orderInfo }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          swal("Updated!", "Order information has been updated!", "success");
+        }
+      });
   };
-
-
 
   return (
     <div className="bg-black">
@@ -80,6 +79,14 @@ const OrderItems = () => {
         <div className="flex justify-end">
           <img className="w-40 rounded-3xl" src={Food_Image} alt="" />
         </div>
+        <input
+          hidden
+          type="number"
+          name="count"
+          placeholder=""
+          required
+          defaultValue={Count}
+        />
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"

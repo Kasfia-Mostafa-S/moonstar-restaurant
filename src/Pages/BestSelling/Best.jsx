@@ -2,28 +2,28 @@ import { Link } from "react-router-dom";
 
 const Best = ({ food }) => {
 
-  const {_id, food_name, image, price ,food_category} = food;
+  const {_id, Food_Name, Food_Image, Price ,Food_Category} = food;
 
   return (
     <div>
-      <div className="max-w-sm font-San bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="max-w-sm font-San bg-orange-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-          <img className="rounded-t-lg w-full h-60" src={image} alt="" />
+          <img className="rounded-t-lg w-full h-60" src={Food_Image} alt="" />
         </a>
         <div className="p-5">
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Name: {food_name}
+            Name: {Food_Name}
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Category: {food_category}
+            Category: {Food_Category}
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Price: ${price}
+            Price: ${Price}
           </p>
-          {/* <Link to={`/foodItems/${_id}`}> */}
+          <Link to={`/foodItems/${_id}`}>
             <a
               href="#"
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Details
               <svg
@@ -42,9 +42,11 @@ const Best = ({ food }) => {
                 />
               </svg>
             </a>
-          {/* </Link> */}
+          </Link>
         </div>
+        
       </div>
+      
     </div>
   );
 };

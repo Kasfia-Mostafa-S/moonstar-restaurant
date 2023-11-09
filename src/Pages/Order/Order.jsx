@@ -31,8 +31,6 @@ const Order = () => {
       swal("Thank You!", "Hope you love the taste", "success");
     }
 
-i
-
 
     fetch("http://localhost:5000/foods", {
       method: "POST",
@@ -46,6 +44,9 @@ i
         console.log(data);
         swal("Confirm!", "Food has added!", "success");
       });
+
+    
+      
   };
 
   return (
