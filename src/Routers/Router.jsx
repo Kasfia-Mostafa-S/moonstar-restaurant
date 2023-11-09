@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: 'addedFoods/:id',
         element:<PrivateRoute><AddedFoods></AddedFoods></PrivateRoute>,
-        loader:  ({params}) => fetch(`https://moonstar-restaurant-server.vercel.app/${params.id}`),
+        loader:  ({params}) => fetch(`http://localhost:5000/newFood/${params.id}`),
       },
       {
         path: 'orderItems/:id',

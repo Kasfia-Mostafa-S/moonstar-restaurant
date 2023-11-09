@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import SectionTwo from "../sectionTwo/SectionTwo";
 import Review from "../Sectionthree/Review";
 import BestSelling from "../BestSelling/BestSelling";
+import Framer from "../framer/framer";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner></Banner>
       <SectionTwo></SectionTwo>
       <BestSelling></BestSelling>
+      <Framer></Framer>
       <Review></Review>
   </HelmetProvider>
     </div>
