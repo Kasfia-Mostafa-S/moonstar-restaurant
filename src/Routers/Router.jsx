@@ -27,17 +27,17 @@ const router = createBrowserRouter([
       {
         path: 'foodItems',
         element: <FoodItems></FoodItems>,
-        loader:  () => fetch(`http://localhost:5000/foodCount`),
+        loader:  () => fetch(`https://moonstar-restaurant-server.vercel.app/foodCount`),
       },
       {
         path: 'foodItems/:id',
         element: <EachItem></EachItem>,
-        loader:  ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+        loader:  ({params}) => fetch(`https://moonstar-restaurant-server.vercel.app/foods/${params.id}`),
       },
       {
         path: 'order/:id',
         element:<PrivateRoute><Order></Order></PrivateRoute>,
-        loader:  ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+        loader:  ({params}) => fetch(`https://moonstar-restaurant-server.vercel.app/foods/${params.id}`),
       },
       {
         path: 'addedFoods',
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
       {
         path: 'addedFoods/:id',
         element:<PrivateRoute><AddedFoods></AddedFoods></PrivateRoute>,
-        loader:  ({params}) => fetch(`http://localhost:5000/newFood/${params.id}`),
+        loader:  ({params}) => fetch(`https://moonstar-restaurant-server.vercel.app/newFood/${params.id}`),
       },
       {
         path: 'orderItems/:id',
         element:<PrivateRoute><OrderItems></OrderItems></PrivateRoute>,
-        loader:  ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+        loader:  ({params}) => fetch(`https://moonstar-restaurant-server.vercel.app/foods/${params.id}`),
       },
       {
         path: 'userOrder',

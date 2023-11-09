@@ -25,14 +25,14 @@ const FoodItems = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/foods")
+    fetch("https://moonstar-restaurant-server.vercel.app/foods")
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/foods?page=${currentPage}&size=${itemsPerPage}`
+      `https://moonstar-restaurant-server.vercel.app/foods?page=${currentPage}&size=${itemsPerPage}`
     )
       .then((res) => res.json())
       .then((data) => setFoods(data));

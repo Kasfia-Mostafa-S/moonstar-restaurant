@@ -8,7 +8,7 @@ const USerOrders = () => {
   const [eachOrder, setEachOrder] = useState([]);
   console.log(eachOrder)
 
-  const url = `http://localhost:5000/orderFood?email=${user?.email}`;
+  const url = `https://moonstar-restaurant-server.vercel.app/orderFood?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

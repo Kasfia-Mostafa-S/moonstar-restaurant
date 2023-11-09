@@ -23,7 +23,7 @@ const UserOrder = ({ eachFood }) => {
       quantity,
     };
 
-    fetch(`http://localhost:5000/foods/${_id}`, {
+    fetch(`https://moonstar-restaurant-server.vercel.app/foods/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

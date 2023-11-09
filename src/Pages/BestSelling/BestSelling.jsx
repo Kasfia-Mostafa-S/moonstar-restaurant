@@ -4,7 +4,7 @@ import Best from "./Best";
 const BestSelling = () => {
   const [best, setBest] = useState([]);
 
-  const url = `http://localhost:5000/foods`;
+  const url = `https://moonstar-restaurant-server.vercel.app/foods`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

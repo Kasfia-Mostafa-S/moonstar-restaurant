@@ -44,7 +44,7 @@ const OrderItems = () => {
       swal("Thank You!", "Hope you love the taste", "success");
     }
 
-    fetch("http://localhost:5000/orderFood", {
+    fetch("https://moonstar-restaurant-server.vercel.app/orderFood", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -57,7 +57,7 @@ const OrderItems = () => {
         swal("Confirm!", "Food has been ordered!", "success");
       });
 
-    fetch(`http://localhost:5000/foods/${_id}`, {
+    fetch(`https://moonstar-restaurant-server.vercel.app/foods/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -33,13 +33,7 @@ const Banner = () => {
           </p>
         </div>
         <div data-aos="zoom-in" className="flex justify-center mt-16">
-          <video
-            className="w-3/4"
-            autoPlay
-            muted
-            loop
-            src="/src/assets/vecteezy_knead-the-dough-ingredients-for-the-dough-the-best_14705753_962.mov"
-          ></video>
+         <img className="w-3/4" src="https://i.postimg.cc/Dwbn2yF5/calum-lewis-v-A1-L1j-RTM70-unsplash.jpg" alt="" />
         </div>
         <div className="flex justify-center pt-20">
          <Link to='/foodItems'>
