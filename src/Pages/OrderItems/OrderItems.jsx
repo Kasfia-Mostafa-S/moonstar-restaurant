@@ -5,9 +5,13 @@ import swal from "sweetalert";
 
 const OrderItems = () => {
   const orderFood = useLoaderData();
-  const { Count, Food_Name, Price, Food_Image, Food_Category } =
+  const { Count, Food_Name, Price, Food_Image, Food_Category,_id } =
     orderFood || [];
   console.log(Count);
+
+  const newCount = parseInt(Count + 1);
+  console.log(newCount)
+
 
   const { user } = useContext(AuthContext);
 
@@ -35,9 +39,6 @@ const OrderItems = () => {
       image,
       count
     };
-
-    // const newCount = { count };
-
     if (parseInt(quantity) > parseInt(20)) {
       swal("Sorry!", "Doesn't have enough quantity ");
     } else {
@@ -57,12 +58,12 @@ const OrderItems = () => {
         swal("Confirm!", "Food has been ordered!", "success");
       });
 
-    fetch(`https://moonstar-restaurant-server.vercel.app/foods/${_id}`, {
+    fetch(`https://moonstar-restaurant-server.vercel.app/showFoods/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ Count: orderInfo }),
+      body: JSON.stringify({ Count: newCount }),
     })
       .then((res) => res.json())
       .then((data) => {

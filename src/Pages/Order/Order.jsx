@@ -4,7 +4,6 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import swal from "sweetalert";
 
 const Order = () => {
-  
   const orderFood = useLoaderData();
 
   const { Food_Name, Price, Food_Image } = orderFood || [];
@@ -31,7 +30,6 @@ const Order = () => {
       swal("Thank You!", "Hope you love the taste", "success");
     }
 
-
     fetch("https://moonstar-restaurant-server.vercel.app/foods", {
       method: "POST",
       headers: {
@@ -44,17 +42,14 @@ const Order = () => {
         console.log(data);
         swal("Confirm!", "Food has added!", "success");
       });
-
-    
-      
   };
 
   return (
     <div className="bg-black">
       <form onSubmit={handleOrder} className="max-w-7xl mx-auto p-40 h-[100vh]">
-      <div className="flex justify-end">
-              <img className="w-40 rounded-3xl" src={Food_Image} alt="" />
-            </div>
+        <div className="flex justify-end">
+          <img className="w-40 rounded-3xl" src={Food_Image} alt="" />
+        </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
