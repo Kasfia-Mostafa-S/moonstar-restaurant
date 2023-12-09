@@ -1,10 +1,10 @@
-## Moonstar Restaurant
+## 🏪 Moonstar Restaurant
 
 A visually appealing, mobile-friendly site showcasing menu, reservations, reviews, and contact for a seamless restaurant experience.
 
 <a href='https://moonstar-restaurant.web.app/'>Live Demo</a>
 
-### Features
+### ⭐ Features
 - Framer motion animation
 - Aos in card Animation
 - Email SignIn, SignUp
