@@ -53,17 +53,25 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
       if (currentUser) {
         axios
-          .post(`https://moonstar-restaurant-server.vercel.app/jwt`, loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            `https://moonstar-restaurant-server.vercel.app/jwt`,
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
             console.log("Token response", res.data);
           });
       } else {
         axios
-          .post("https://moonstar-restaurant-server.vercel.app/logout", loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            "https://moonstar-restaurant-server.vercel.app/logout",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
             console.log(res.data);
           });

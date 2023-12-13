@@ -1,4 +1,4 @@
-import sectiontwo from '../../Styles/sectiontwo.css'
+import '../../Styles/sectiontwo.css'
 const SectionTwo = () => {
   return (
     <div className='bg-black pt-40'>
