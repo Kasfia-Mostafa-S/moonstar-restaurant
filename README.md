@@ -2,7 +2,7 @@
 
 A visually appealing, mobile-friendly site showcasing menu, reservations, reviews, and contact for a seamless restaurant experience.
 
-<a href='https://moonstar-restaurant.web.app/'>Live Demo</a>
+<a href='https://65797c6e7b0f227d6eb29ab8--charming-shortbread-bc0bca.netlify.app/'>Live Demo</a>
 
 ### ⭐ Features
 - Framer motion animation

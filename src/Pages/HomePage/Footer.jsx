@@ -1,8 +1,9 @@
 import { BsMoonStars } from "react-icons/Bs";
-
+import ScrollToTop from "react-scroll-to-top";
 const Footer = () => {
   return (
     <div>
+        <ScrollToTop smooth top="20" width="40" height="20" />
       <footer className="p-4 bg-black sm:p-6 dark:bg-gray-800 font-DM">
         <div className="mx-auto max-w-screen-xl">
           <div className="md:flex md:justify-between">
