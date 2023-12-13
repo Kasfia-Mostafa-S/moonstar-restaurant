@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import FoodItem from "./FoodItem";
 import { useEffect, useState } from "react";
-import ButtonStyle from "../../Styles/Button.css";
+import "../../Styles/Button.css";
 
 const FoodItems = () => {
   const { count } = useLoaderData();

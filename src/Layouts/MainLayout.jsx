@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Pages/HomePage/Navbar";
-import Styles from "../Styles/Scroll.css";
+import "../Styles/Scroll.css";
 import Footer from "../Pages/HomePage/Footer";
 import Loader from "../Utility/Loader";
 
